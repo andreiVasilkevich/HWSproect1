@@ -1,4 +1,11 @@
 .button {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 100px;
+    width: auto;
+
 }
 
 .disabled {
@@ -8,9 +15,12 @@
 }
 
 .default {
+    opacity: 0.8;
 }
 
 .red {
+    color: red;
+
 }
 
 .default:hover {

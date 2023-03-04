@@ -2,32 +2,33 @@ import React from 'react'
 import Affair from './affair/Affair'
 import {AffairType, FilterType} from '../HW2'
 import s from './Affairs.module.css'
+import affair from "./affair/Affair";
 
 type AffairsPropsType = {
-    data: any // need to fix any
-    setFilter: any
-    deleteAffairCallback: any
+    data: AffairType[] // need to fix any
+    setFilter: (filter: FilterType) => void
+    deleteAffairCallback: (_id: number) => void
     filter: FilterType
 }
 
 function Affairs(props: AffairsPropsType) {
     const setAll = () => {
-        // need to fix
+        props.setFilter('all')
     }
     const setHigh = () => {
-        // need to fix
+        props.setFilter('high')
     }
     const setMiddle = () => {
-        // need to fix
+        props.setFilter('middle')
     }
     const setLow = () => {
-        // need to fix
+        props.setFilter('low')
     }
 
-    const cnAll = s.button + ' ' + s.all + (props.filter === 'all' ? ' ' + s.active : '')
-    const cnHigh = s.button + ' ' + s.high + (props.filter === 'high' ? ' ' + s.active : '')
-    const cnMiddle = s.button + ' ' + s.middle + (props.filter === 'middle' ? ' ' + s.active : '')
-    const cnLow = s.button + ' ' + s.low + (props.filter === 'low' ? ' ' + s.active : '')
+    const cnAll = s.button + 'all ' + s.all + (props.filter === 'all' ? 'All ' + s.active : 'hw2-button-all')
+    const cnHigh = s.button + 'high ' + s.high + (props.filter === 'high' ? 'High ' + s.active : 'hw2-button-high')
+    const cnMiddle = s.button + 'middle ' + s.middle + (props.filter === 'middle' ? 'Middle ' + s.active : 'Middle')
+    const cnLow = s.button + 'low ' + s.low + (props.filter === 'low' ? 'Low ' + s.active : 'Low')
 
     const mappedAffairs = props.data.map((a: AffairType) => (
         <Affair

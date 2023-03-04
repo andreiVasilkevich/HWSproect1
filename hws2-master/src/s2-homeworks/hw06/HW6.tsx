@@ -15,13 +15,15 @@ const HW6 = () => {
     const [value, setValue] = useState<string>('')
 
     const save = () => {
+        console.log(value)
         saveState<string>('hw6-editable-span-value', value)
     }
     const restore = () => {
         // делают студенты
-
+        console.log(value)
+        setValue(restoreState<string>('hw6-editable-span-value', ''))
     }
-
+        console.log(value)
     return (
         <div id={'hw6'}>
             <div className={s2.hwTitle}>Homework #6</div>

@@ -1,13 +1,21 @@
 .greetingForm {
+    display: flex;
+    align-items: flex-start;
 }
 
 .inputAndButtonContainer {
 }
 
 .error {
+    color: red;
+    height: 21px;
+    margin-left: 20px;
 }
 
 .input {
+    margin: 10px;
+    background: seagreen;
+    color: #00cc22;
 }
 
 .input:focus {
