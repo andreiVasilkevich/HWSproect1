@@ -12,7 +12,7 @@ export const homeWorkReducer = (state: UserType[], action: ActionType): UserType
                 return sortUp
             }
             else if(action.payload === 'down') {
-                const sortDown = [...state].sort((b,c) => b.name.localeCompare(c.name))
+                const sortDown = [...state].sort((a,b) => b.name.localeCompare(a.name))
                 return sortDown
             }
             else {
@@ -22,7 +22,8 @@ export const homeWorkReducer = (state: UserType[], action: ActionType): UserType
             // need to fix
         }
         case 'check': {
-            return state.filter((el)=> el._id === action.payload) // need to fix
+            const check18 = state.filter((el)=> el.age >= action.payload) // need to fix
+            return check18
         }
         default:
             return state
