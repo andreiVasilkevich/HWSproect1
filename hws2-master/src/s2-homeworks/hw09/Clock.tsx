@@ -11,11 +11,10 @@ function Clock() {
     const [show, setShow] = useState<boolean>(false)
 
     const start = () => {
-        let now =   new Date()
-        setDate(now)
-        let timerId = setInterval(setTimerId,0);
-        console.log(timerId)
-        setTimerId(+timerId)
+        stop()
+        setTimerId(+setInterval(()=>{
+            setDate(new Date(Date.now()))
+        },1000))
         //setShow(true)
         // setDate(timerId)
         // const value = setDate(new Date ())
@@ -30,7 +29,6 @@ function Clock() {
 
     const stop = () => {
         // пишут студенты // поставить часы на паузу, обнулить ид таймера (timerId <- undefined)
-        let timerId = setInterval(setTimerId);
         clearTimeout(timerId)
         //setShow(false)
     }
