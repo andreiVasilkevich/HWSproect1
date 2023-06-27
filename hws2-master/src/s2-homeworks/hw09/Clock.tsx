@@ -11,7 +11,8 @@ function Clock() {
     const [show, setShow] = useState<boolean>(false)
 
     const start = () => {
-        //stop()
+        stop()
+        timerId
         setTimerId(+setInterval(()=>{
             setDate(new Date(Date.now()))
         },1000))
@@ -31,6 +32,7 @@ function Clock() {
         
         // пишут студенты // поставить часы на паузу, обнулить ид таймера (timerId <- undefined)
         clearTimeout(timerId)
+        timerId
         //setShow(false)
     }
 
