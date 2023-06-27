@@ -17,7 +17,7 @@ function Clock() {
         setTimerId(+setInterval(()=>{
             setDate(new Date(Date.now()))
         },1000))
-        console.log(timerId)
+        
         //setShow(true)
         // setDate(timerId)
         // const value = setDate(new Date ())
