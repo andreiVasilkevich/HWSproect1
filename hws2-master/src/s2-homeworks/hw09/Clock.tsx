@@ -13,9 +13,11 @@ function Clock() {
     const start = () => {
         stop()
         timerId
+        console.log(timerId)
         setTimerId(+setInterval(()=>{
             setDate(new Date(Date.now()))
         },1000))
+        console.log(timerId)
         //setShow(true)
         // setDate(timerId)
         // const value = setDate(new Date ())
@@ -31,7 +33,9 @@ function Clock() {
     const stop = () => {
         
         // пишут студенты // поставить часы на паузу, обнулить ид таймера (timerId <- undefined)
+        console.log(timerId)
         clearTimeout(timerId)
+        console.log(timerId)
         timerId
         //setShow(false)
     }
@@ -57,13 +61,13 @@ function Clock() {
 
     const stringTime = date.toLocaleTimeString("ru-RU")  || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
     const stringDate =  date.toLocaleDateString("ru-RU")  || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
-    console.log(stringDate)
+   // console.log(stringDate)
     let formaterWeekdey = new Intl.DateTimeFormat("en",{weekday:"long"})
     let fomaterMonth =  new Intl.DateTimeFormat("en",{month:"long"})
     const stringDay = `${formaterWeekdey.format(date)}` || <br/> // пишут студенты
-    console.log(stringDay)
+    //console.log(stringDay)
     const stringMonth = `${fomaterMonth.format(date)}` || <br/> // пишут студенты
-    console.log(stringMonth)
+   // console.log(stringMonth)
     return (
         <div className={s.clock}>
             <div
