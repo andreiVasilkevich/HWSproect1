@@ -12,8 +12,6 @@ function Clock() {
 
     const start = () => {
         stop()
-        setTimerId(timerId)
-        console.log(timerId)
         setTimerId(+setInterval(()=>{
             setDate(new Date(Date.now()))
         },1000))
@@ -32,12 +30,9 @@ function Clock() {
 
     const stop = () => {
         
-        // пишут студенты // поставить часы на паузу, обнулить ид таймера (timerId <- undefined)
-        console.log(timerId)
+        // пишут студенты // поставить часы на паузу, обнулить ид таймера (timerId <- undefined
         clearTimeout(timerId)
-        setTimerId(timerId)
-        console.log(timerId)
-        timerId
+       
         //setShow(false)
     }
 
@@ -102,14 +97,14 @@ function Clock() {
             <div className={s.buttonsContainer}>
                 <SuperButton
                     id={'hw9-button-start'}
-                    disabled={!!timerId} // пишут студенты // задизэйблить если таймер запущен
+                    disabled={false} // пишут студенты // задизэйблить если таймер запущен
                     onClick={start}
                 >
                     start
                 </SuperButton>
                 <SuperButton
                     id={'hw9-button-stop'}
-                    disabled={!timerId} // пишут студенты // задизэйблить если таймер не запущен
+                    disabled={false} // пишут студенты // задизэйблить если таймер не запущен
                     onClick={stop}
                 >
                     stop
