@@ -13,57 +13,40 @@ function Clock() {
     const start = () => {
         stop()
         setTimerId(+setInterval(()=>{
-            setDate(new Date(Date.now()))
+            setDate(new Date())
         },1000))
-        console.log(timerId)
-        //setShow(true)
-        // setDate(timerId)
-        // const value = setDate(new Date ())
-
-        //console.log(value)
-        //setTimerId(value)
-
-        // пишут студенты // запустить часы (должно отображаться реальное время, а не +1)
-        // сохранить ид таймера (https://learn.javascript.ru/settimeout-setinterval#setinterval)
-
+    
     }
 
     const stop = () => {
         
         // пишут студенты // поставить часы на паузу, обнулить ид таймера (timerId <- undefined
-        clearTimeout(timerId)
+        if(timerId) {
+            clearTimeout(timerId)
+            setTimerId(undefined)
+        }
        
         //setShow(false)
     }
 
     const onMouseEnter = () => { // пишут студенты // показать дату если наведена мышка
-        // if(show === true) {
-        // date.toLocaleDateString("ru-RU")
-        // setShow(true)
-        //}
-        //   else setShow(false)
-        //let dais = `${stringDate}${stringDay}`
-        // const date =  stringDate, stringDay
+        
         setShow(true)
-        // let set = '1'
     }
     const onMouseLeave = () => { // пишут студенты // спрятать дату если мышка не наведена
-        //  if(show === false) {
-        //    setShow(false)
-        //   }
-        //  else setShow(true)
+        
         setShow(false)
     }
 
     const stringTime = date.toLocaleTimeString("ru-RU")  || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
     const stringDate =  date.toLocaleDateString("ru-RU")  || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
-   // console.log(stringDate)
-    let formaterWeekdey = new Intl.DateTimeFormat("en",{weekday:"long"})
-    let fomaterMonth =  new Intl.DateTimeFormat("en",{month:"long"})
+   
+    let formaterWeekdey = new Intl.DateTimeFormat("en-US",{weekday:"long"})
+    let fomaterMonth =  new Intl.DateTimeFormat("en-US",{month:"long"})
     const stringDay = `${formaterWeekdey.format(date)}` || <br/> // пишут студенты
-    //console.log(stringDay)
+   
     const stringMonth = `${fomaterMonth.format(date)}` || <br/> // пишут студенты
-   // console.log(stringMonth)
+   
     return (
         <div className={s.clock}>
             <div
