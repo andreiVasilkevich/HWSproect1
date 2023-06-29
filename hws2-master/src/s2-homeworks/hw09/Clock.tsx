@@ -32,7 +32,7 @@ function Clock() {
         
         // пишут студенты // поставить часы на паузу, обнулить ид таймера (timerId <- undefined
         clearTimeout(timerId)
-        start()
+       
         //setShow(false)
     }
 
